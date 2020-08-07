@@ -1,0 +1,36 @@
+spring:
+  # mysql配置
+  datasource:
+    initialization-mode: always
+    initialize: true
+    data-password: Looper1991[]
+    data-username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    password: Looper1991[]
+    schema-password: Looper1991[]
+    schema-username: root
+    url: jdbc:mysql://10.4.11.106:3306/sentinel?characterEncoding=utf8
+    username: root
+    hikari:
+      connection-timeout: 30000
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+      pool-name: MonitorHikariCP
+      idle-timeout: 3000
+    type: com.zaxxer.hikari.HikariDataSource
+    data: classpath:mysql/2.0.0/FillServerName.sql
+  jackson:
+    serialization:
+      indent_output: false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL55Dialect
+    show-sql: false

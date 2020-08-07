@@ -58,4 +58,16 @@ java -Dserver.port=8080 \
 客户端正确配置并启动后，会**在初次调用后**主动向控制台发送心跳包，汇报自己的存在；
 控制台收到客户端心跳包之后，会在左侧导航栏中显示该客户端信息。如果控制台能够看到客户端的机器信息，则表明客户端接入成功了。
 
+## 4.补充 增加限流规则的持久化-mysql
+    1、pom.xml 增加JPA依赖以及MySQL驱动
+    2、增加实体类MetricsPo
+    3、增加MetricsRepository实现类
+    4、替换Controller依赖的MetricsRepository的注入
+    5、更新配置文件依赖的数据库相关配置
+    6、重新打包编译执行
+    7、-Dserver.port=8180 -Dcsp.sentinel.dashboard.server=localhost:8180 -Dproject.name=sentinel-dashboard
+    
+ [资料参考](https://www.cnblogs.com/cdfive2018/p/9838577.html)
+
+
 更多：[控制台功能介绍](./Sentinel_Dashboard_Feature.md)。
