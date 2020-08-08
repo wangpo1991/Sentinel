@@ -3,11 +3,11 @@ spring:
   datasource:
     initialization-mode: always
     initialize: true
-    data-password: Looper1991[]
+    data-password: root
     data-username: root
     driver-class-name: com.mysql.jdbc.Driver
-    password: Looper1991[]
-    schema-password: Looper1991[]
+    password: root
+    schema-password: root
     schema-username: root
     url: jdbc:mysql://10.4.11.106:3306/sentinel?characterEncoding=utf8
     username: root
